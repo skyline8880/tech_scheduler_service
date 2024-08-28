@@ -6,7 +6,6 @@ from bitrix.bitrix_api import BitrixMethods
 from database.database import Database
 from request.request import Request
 from scheduler.scheduler import Tracker
-from core.secrets import DatabaseSecrets
 
 app = FastAPI()
 
@@ -34,4 +33,4 @@ async def get_deal_data(deal_id: int, department_id: int):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app=app, host=DatabaseSecrets.PGHOST, port=8887)
+    uvicorn.run(app=app, host='127.0.0.1', port=8887)
