@@ -9,4 +9,4 @@ services:
     env_file:
       - .env
     ports:
-      - 86:8887
+      - 8887:80
