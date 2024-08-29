@@ -37,7 +37,7 @@ async def get_deal_data(deal_id: int, department_id: int):
         department_id=department_id, bitrix_deal_id=deal_id)
     if data is None:
         raise HTTPException(status_code=404)
-    return create_deal_result()
+    return create_deal_result(data=data)
 
 
 if __name__ == '__main__':
