@@ -111,7 +111,7 @@ def create_deal_result(data):
         'department_name': data[2],
         'status_id': data[3],
         'status_name': data[4],
-        'AS creator_telegram_id': data[5],
+        'creator_telegram_id': data[5],
         'creator_username': data[6],
         'creator_full_name': data[7],
         'creator_phone': data[8],
