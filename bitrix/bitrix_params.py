@@ -17,6 +17,28 @@ def create_deal_json(
         break_type_field,
         zone_field,
         photo_field):
+    """
+    Создать JSON для создания сделки.
+
+    Параметры:
+        - title (str): Название сделки.
+        - assigned_by (int): ID пользователя, назначающего сделку.
+        - category_id (int): ID категории сделки.
+        - stage_id (int): ID стадии сделки.
+        - short_description (str): Краткое описание.
+        - detailed_description (str): Подробное описание.
+        - break_type (str): Тип поломки.
+        - zone (str): Зона поломки.
+        - photo_path (str): Путь к фото.
+        - short_description_field (str): Поле краткого описания в JSON.
+        - detailed_description_field (str): Поле подробного описания в JSON.
+        - break_type_field (str): Поле типа поломки в JSON.
+        - zone_field (str): Поле зоны в JSON.
+        - photo_field (str): Поле фото в JSON.
+
+    Возвращает:
+        dict: JSON для создания сделки.
+    """
     separator = '/'
     if sys.platform == 'win32':
         separator = '\\'
@@ -44,6 +66,17 @@ def create_deal_json(
 
 
 def asign_deal_id_on_title(department_id, deal_id, title):
+    """
+    Присвоить ID сделки в название.
+
+    Параметры:
+        - department_id (str): ID департамента.
+        - deal_id (int): ID сделки.
+        - title (str): Название сделки.
+
+    Возвращает:
+        dict: JSON с ID сделки в названии.
+    """
     return {
         'ID': deal_id,
         'fields': {
