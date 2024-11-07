@@ -9,36 +9,10 @@ def create_deal_json(
         stage_id,
         short_description,
         detailed_description,
-        break_type,
-        zone,
         photo_path,
         short_description_field,
         detailed_description_field,
-        break_type_field,
-        zone_field,
         photo_field):
-    """
-    Создать JSON для создания сделки.
-
-    Параметры:
-        - title (str): Название сделки.
-        - assigned_by (int): ID пользователя, назначающего сделку.
-        - category_id (int): ID категории сделки.
-        - stage_id (int): ID стадии сделки.
-        - short_description (str): Краткое описание.
-        - detailed_description (str): Подробное описание.
-        - break_type (str): Тип поломки.
-        - zone (str): Зона поломки.
-        - photo_path (str): Путь к фото.
-        - short_description_field (str): Поле краткого описания в JSON.
-        - detailed_description_field (str): Поле подробного описания в JSON.
-        - break_type_field (str): Поле типа поломки в JSON.
-        - zone_field (str): Поле зоны в JSON.
-        - photo_field (str): Поле фото в JSON.
-
-    Возвращает:
-        dict: JSON для создания сделки.
-    """
     separator = '/'
     if sys.platform == 'win32':
         separator = '\\'
@@ -53,8 +27,6 @@ def create_deal_json(
             'STAGE_ID': stage_id,
             f'{short_description_field}': short_description,
             f'{detailed_description_field}': detailed_description,
-            f'{break_type_field}': break_type,
-            f'{zone_field}': zone,
             f'{photo_field}': {
                 'fileData': [
                     photo_name,
@@ -66,17 +38,6 @@ def create_deal_json(
 
 
 def asign_deal_id_on_title(department_id, deal_id, title):
-    """
-    Присвоить ID сделки в название.
-
-    Параметры:
-        - department_id (str): ID департамента.
-        - deal_id (int): ID сделки.
-        - title (str): Название сделки.
-
-    Возвращает:
-        dict: JSON с ID сделки в названии.
-    """
     return {
         'ID': deal_id,
         'fields': {
@@ -152,8 +113,6 @@ def create_deal_result(data):
         'creator_department': data[10],
         'creator_position_id': data[11],
         'creator_position': data[12],
-        'zone': data[13],
-        'brake_type': data[14],
         'creator_photo': data[15],
         'short_description': data[16],
         'detailed_description': data[17],

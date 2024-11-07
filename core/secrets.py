@@ -20,7 +20,7 @@ class DatabaseSecrets:
     SCHEMA_NAME = os.getenv('SCHEMA_NAME')
 
 
-class BitrixSecrets():
+class BitrixSecrets:
     """     MSK_TOKEN = os.getenv('MSK_TOKEN')
         VLK_TOKEN = os.getenv('VLK_TOKEN')
         NKR_TOKEN = os.getenv('NKR_TOKEN')
