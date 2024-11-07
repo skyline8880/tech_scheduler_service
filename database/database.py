@@ -116,8 +116,6 @@ class Database:
             department_id,
             status_id,
             creator_telegram_id,
-            zone,
-            break_type,
             photo,
             short_description,
             detailed_description
@@ -131,8 +129,6 @@ class Database:
                 'department_id': int(department_id),
                 'status_id': int(status_id),
                 'creator_telegram_id': int(creator_telegram_id),
-                'zone': zone,
-                'break_type': break_type,
                 'creator_photo': photo,
                 'short_description': short_description,
                 'detailed_description': detailed_description})

@@ -9,13 +9,9 @@ def create_deal_json(
         stage_id,
         short_description,
         detailed_description,
-        break_type,
-        zone,
         photo_path,
         short_description_field,
         detailed_description_field,
-        break_type_field,
-        zone_field,
         photo_field):
     separator = '/'
     if sys.platform == 'win32':
@@ -31,8 +27,6 @@ def create_deal_json(
             'STAGE_ID': stage_id,
             f'{short_description_field}': short_description,
             f'{detailed_description_field}': detailed_description,
-            f'{break_type_field}': break_type,
-            f'{zone_field}': zone,
             f'{photo_field}': {
                 'fileData': [
                     photo_name,
@@ -119,8 +113,6 @@ def create_deal_result(data):
         'creator_department': data[10],
         'creator_position_id': data[11],
         'creator_position': data[12],
-        'zone': data[13],
-        'brake_type': data[14],
         'creator_photo': data[15],
         'short_description': data[16],
         'detailed_description': data[17],
