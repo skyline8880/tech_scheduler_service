@@ -112,7 +112,6 @@ class Tracker():
             func=self.track_24_hours,
             trigger='date',
             next_run_time=start_date + dt.timedelta(hours=24),
-            next_run_time=start_date + dt.timedelta(seconds=7),
             kwargs={'deal_id': deal_id, 'department_id': department_id}
         )
 
