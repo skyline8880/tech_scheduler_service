@@ -11,6 +11,15 @@ if sys.platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 
+class TGSecrets:
+    BOT_TOKEN = os.getenv('BOT_TOKEN')
+    BOT_USERNAME = os.getenv('BOT_USERNAME')
+    MSK_GROUP = int(os.getenv('MSK_GROUP'))
+    VLK_GROUP = int(os.getenv('VLK_GROUP'))
+    NKR_GROUP = int(os.getenv('NKR_GROUP'))
+    BTV_GROUP = int(os.getenv('BTV_GROUP'))
+
+
 class DatabaseSecrets:
     PGHOST = os.getenv('PGHOST')
     PGDATABASE = os.getenv('PGDATABASE')

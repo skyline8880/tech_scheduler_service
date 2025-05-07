@@ -37,8 +37,6 @@ SELECT_BITRIX_STAGE_BY_DEPARTMENT_ID = f'''
 '''
 SELECT_BITRIX_FIELD_BY_DEPARTMENT_ID = f'''
     SELECT
-        zone,
-        break_type,
         photo,
         short_description,
         detailed_description,
@@ -84,6 +82,19 @@ SELECT_EXECUTORS_BY_DEPRTMENT_ID = f'''
     WHERE position_id = 4 AND is_active = TRUE
     AND department_id = %(department_id)s
 '''
+SELECT_DEAL_MSG_ID_AND_CREATOR_ID_OF_CURRENT_REQUEST = f'''
+    SELECT
+        deal_message_id,
+        creator_telegram_id
+    FROM {Tables.SCHEMA}.{Tables.REQUEST}
+    WHERE department_id = %(department_id)s
+    AND bitrix_deal_id = %(bitrix_deal_id)s;
+'''
+SELECT_GROUP_MSG_ID_OF_CURRENT_REQUEST = f'''
+    SELECT group_message_id FROM {Tables.SCHEMA}.{Tables.REQUEST}
+    WHERE department_id = %(department_id)s
+    AND bitrix_deal_id = %(bitrix_deal_id)s;
+'''
 SELECT_REQUESTS = f'''
     SELECT
         req.bitrix_deal_id AS bitrix_deal_id,
@@ -99,8 +110,6 @@ SELECT_REQUESTS = f'''
         cdep.name AS creator_department,
         cemp.position_id AS creator_position_id,
         cpos.name AS creator_position,
-        req.zone AS zone,
-        req.break_type AS brake_type,
         req.creator_photo AS creator_photo,
         req.short_description AS short_description,
         req.detailed_description AS detailed_description,
@@ -251,8 +260,6 @@ SELECT_DEPARTMENT_REQUESTS_BY_STATUS = f'''
         cdep.name AS creator_department,
         cemp.position_id AS creator_position_id,
         cpos.name AS creator_position,
-        req.zone AS zone,
-        req.break_type AS brake_type,
         req.creator_photo AS creator_photo,
         req.short_description AS short_description,
         req.detailed_description AS detailed_description,
@@ -303,8 +310,6 @@ SELECT_CURRENT_REQUEST_OF_DEPARTMENT = f'''
         cdep.name AS creator_department,
         cemp.position_id AS creator_position_id,
         cpos.name AS creator_position,
-        req.zone AS zone,
-        req.break_type AS brake_type,
         req.creator_photo AS creator_photo,
         req.short_description AS short_description,
         req.detailed_description AS detailed_description,

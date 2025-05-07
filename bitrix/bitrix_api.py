@@ -45,8 +45,6 @@ class BitrixMethods():
             self.done
                 ) = await self.db.get_bitrix_stage(self.dep_id)
         (
-            self.zone,
-            self.break_type,
             self.photo,
             self.short_description,
             self.detailed_description,
